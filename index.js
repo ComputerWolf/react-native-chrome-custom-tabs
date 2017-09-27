@@ -3,8 +3,8 @@
 var { Linking, NativeModules, Platform } = require('react-native');
 
 if (Platform.OS == 'ios') {
-  // Fall back to Linking.openURL on iOS.
-  module.exports.launchCustomTab = Linking.openURL;
+  // Do nothing on iOS
+  module.exports.launchCustomTab = function(url) {};
   module.exports.mayLaunchUrl = function(url) {};
 }
 else {
